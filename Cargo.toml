@@ -6,4 +6,11 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+swc = { version = "0.176.1", optional = true }
 yew = "0.19.3"
+
+[features]
+default = []
+with-js = ["swc"]
+with-ts = ["swc"]
+with-node = ["swc", "swc/node"]
